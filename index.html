@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const burgerButton = document.getElementById("burger-button");
+            const navbarLinks = document.getElementById("navbar-links");
+    
+            // Écouteur pour ouvrir/fermer le menu
+            burgerButton.addEventListener("click", () => {
+                navbarLinks.classList.toggle("mobile-visible");
+                navbarLinks.classList.toggle("mobile-hidden");
+            });
+        });
+    </script>
+    
+    <nav>
+        <div class="menu-burger">
+            <button id="burger-button" aria-label="Ouvrir le menu">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+        </div>
+        <ul id="navbar-links">
+            <li><a href="#biographie">Biographie</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+
+    <!-- Section Header -->
+    <header>
+    </header>
+
+    <!-- Section Biographie avec le rectangle pour la photo et informations -->
+    <section id="biographie">
+        <div class="profile-card">
+            <img src="pp.jpg" alt="Photo de Profil" class="profile-pic">
+            <h3>Milleret Kylyan</h3>
+            <p>Mon Portfolio</p>
+        </div>
+
+        <div class="biographie-content">
+            <h2>Biographie</h2>
+            <p>Je m'appelle Kylyan Milleret, je suis un étudiant dans le BUT MMI situé à Corte, je veux devenir monteur vidéo,
+                 je suis passioné par les animes et les mangas ainsi que les jeux vidéo.</p>
+        </div>
+    </section>
+
+    <section id="projets">
+        <div class="section-title">
+            <h2>Mes Projets</h2>
+        </div>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <h3>Projet 1</h3>
+                    <img src="Logo_CMJN.png" alt="Image de Projet 1" class="projet-image">
+                    <p>Ceci est mon logo réalisé pour l'événement de la Corsica Games Week, à l'occasion de leur troisième édition.
+                        Je me suis inspiré de la tête de Maure et je l'ai modifiée en reprenant le design de Sacha de Pokémon, 
+                        tout en ajoutant un casque existant réellement.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Projet 2</h3>
+                    <img src="Affiche_RVB.jpg" alt="Image de Projet 2" class="projet-image">
+                    <p>Ceci est mon affiche pour l'événement de la Corsica Games Week, à l'occasion de leur troisième édition.
+                        Je me suis inspiré de plusieurs affiches pour le même type d'événement, en reprenant des idées ici et 
+                        là qui me plaisaient. Le but est de promouvoir l'événement CGW dans un ton à la fois ludique et sérieux.</p>
+                </div>
+                <div class="carousel-item active">
+                    <h3>Projet 3</h3>
+                    <img src="Flyer_RVB.jpg" alt="Image de Projet 3" class="projet-image">
+                    <p>Ceci est mon flyer pour l'événement de la Corsica Games Week, à l'occasion de leur troisième édition.
+                        Le flyer est une version dérivée de l'affiche, en plus petit format. Il sert à présenter les activités 
+                        prévues pendant l'événement.</p>
+                </div>
+                <!-- Ajoutez d'autres projets ici -->
+            </div>
+            <button class="carousel-control prev">❮</button>
+            <button class="carousel-control next">❯</button>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const carouselInner = document.querySelector(".carousel-inner");
+            const items = document.querySelectorAll(".carousel-item");
+            const prevButton = document.querySelector(".carousel-control.prev");
+            const nextButton = document.querySelector(".carousel-control.next");
+    
+            let currentIndex = 0;
+    
+            function updateCarousel() {
+                const offset = -currentIndex * 100; // Calculer la translation
+                carouselInner.style.transform = `translateX(${offset}%)`;
+            }
+    
+            prevButton.addEventListener("click", () => {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                updateCarousel();
+            });
+    
+            nextButton.addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCarousel();
+            });
+        });
+    </script>
+    
+    <section id="projets-video">
+        <div class="section-title">
+            <h2>Projets Vidéo</h2>
+        </div>
+        <div class="video-container">
+            <div class="video-box">
+                <iframe src="Pastis.mp4" allowfullscreen></iframe>
+                <p>Vidéo dans laquelle je suis acteur.
+                    Une interview des super-héros qui ont été
+                    recalés des X-Men.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/videoID2" allowfullscreen></iframe>
+                <p>Bientot disponible.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/videoID3" allowfullscreen></iframe>
+                <p>Bientot disponible.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+ <!-- Section Compétences -->
+<section id="competences">
+    <div class="section-title">
+        <h2>Mes Compétences</h2>
+    </div>
+    <div class="competence-container">
+        <div class="competence-photo">
+            <img src="compétence.png" alt="Image de mes compétences" class="competence-pic">
+        </div>
+        <div class="competence-list">
+            <ul>
+                <li>Maitrise des logiciels :</li>
+                <li>HTML, CSS, PHP</li>
+                <li>Photoshop</li>
+                <li>Illustrator</li>
+                <li>Premiere Pro</li>
+                <li>Davinci Resolve</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Section Contact -->
+<!-- Section Contact -->
+<section id="contact">
+    <div class="section-title">
+        <h2>Contactez-moi</h2>
+    </div>
+    <div class="contact-container">
+        <div class="contact-form">
+            <form action="submit_form.php" method="post">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Section Footer -->
+    <footer>
+        <p>© 2024 Milleret. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
